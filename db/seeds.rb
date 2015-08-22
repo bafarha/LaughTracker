@@ -10,7 +10,7 @@ j1 = Joke.create(title: "Giraffe Walks into a Bar", content: "A man walks into a
 
 j2 = Joke.create(title: "Lobsters", content: "Why don't lobsters like to share?  Because they're shellfish.")
 
-j3 = Joke.create(title: "Typical American", content: "I'm as American as they come.  Well...all except for the fact that I supporth the social welfare system, I don't beleive in God, and I could, if need be, locate Europe on a map.  So, basically, if you change my accent, and replace this perfect smile with a mouthful of crooked teeth, you got yourself a European, really.")
+j3 = Joke.create(title: "Typical American", content: "I'm as American as they come.  Well...all except for the fact that I support the social welfare system, I don't beleive in God, and I could, if need be, locate Europe on a map.  So, basically, if you change my accent, and replace this perfect smile with a mouthful of crooked teeth, you got yourself a European, really.")
 
 t1 = Tag.create(title: "bars")
 
@@ -27,3 +27,9 @@ t6 = Tag.create(title: "lobster")
 t7 = Tag.create(title: "giraffe")
 
 t8 = Tag.create(title: "Americans")
+
+t9 = Tag.create(title: "Me")
+
+j1.tags << [t1, t2, t3, t4, t5, t7]
+j2.tags << [t2, t5, t6]
+j3.tags << [t8, t9]

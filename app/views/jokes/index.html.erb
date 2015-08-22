@@ -5,7 +5,8 @@
 			<div class="jokes">
 				<h3><%= j.title %></h3>
 				<small><em><%= "#{time_ago_in_words(j.created_at)} ago" %></em></small>
-				<p><%= j.content %></p>
+				<!--<p><%= j.content %></p>-->
+				<%= link_to "See Joke", joke_path(j) %>
 			</div>
 		<% end %>
 	</div>

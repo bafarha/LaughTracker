@@ -1,0 +1,15 @@
+<div class="main">
+	<div class="container">
+		<h1><%= @joke.title %></h1>
+		<small><em><%= "#{time_ago_in_words(@joke.created_at)} ago" %></em></small>
+		<div class="tags">
+		<small><em><strong>Tags</strong></em></small>
+		<% @tags.each do |t| %>
+			<small><em>#<%= t.title %></em></small>
+		<% end %>
+		</div>
+		<div class="jokes">
+			<p><%= @joke.content %></p>
+		</div>
+	</div>
+</div>

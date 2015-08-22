@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'static_pages#index'
 
   get '/jokes' => 'jokes#index'
+  get '/jokes/:id' => 'jokes#show', as: 'joke'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
