@@ -6,9 +6,9 @@
 		<div class="tag-jokes">
 			<h2>Jokes</h2>
 			<% @jokes.each do |j| %>
-			<div class="joke-title"
-			<p><%= j.title %></p>
-			<%= link_to "See Joke", joke_path(j) %>
+			<div class="joke-title">
+			<p><a href='<%= joke_path(j) %>'><%= j.title %></a></p>
+			<!--<%= link_to "See Joke", joke_path(j) %>-->
 			</div>
 			<% end %>
 		</div>

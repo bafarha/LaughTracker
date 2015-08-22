@@ -5,7 +5,7 @@
 		<div class="tags">
 		<small><em><strong><%= link_to "Tags", "/tags" %></strong></em></small>
 		<% @tags.each do |t| %>
-			<small><em>#<%= t.title %></em></small>
+			<small><em><a href="<%= tag_path(t) %>">#<%= t.title %></a></em></small>
 		<% end %>
 		</div>
 		<div class="jokes">
