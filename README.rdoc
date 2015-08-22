@@ -1,27 +1,20 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a silly little app I've created as my very first personal RoR Project.  
 
-Things you may want to cover:
+LaughTracker is an app that allows comedians to write and edit jokes, and give them each a tag.  Within each joke, comedians will be able to add a comment and a rating, so that each time they perform the joke live, they can come back and record the success of that jokes.  That is, comedians will be able to use this app to TRACK the LAUGHS each joke got, each time they perform it.  Hence, this app is a LAUGH TRACKER.  :)
 
-* Ruby version
+Other features I hope to add is the ability to search for jokes by tags.  Each joke may have many tags.  For example, the following joke:
 
-* System dependencies
+"A man walks into a bar with a giraffe.  He and the giraffe proceed to get very drunk.  The giraffe then passes out and falls on the floor.  The man gets up to leave the bar when the bartender shouts, 'Hey!  You can't leave that lyin' there!' to which the man replies, 'No, it's not a lion.  It's a giraffe.'"
 
-* Configuration
+could contain several tags, such as #bars, #animals, #drunk, #alcohol, #corny.  Therefore, if a comedian were searching for a joke that fell under any of these tags, for example in order to find an appropriate seguey from one joke to the next, this joke would appear in a list.
 
-* Database creation
+The comedian would then be able to add a comment and a rating for this joke each and every time he/she tells it live, and would be able to note how well the joke went over, as well as what worked, what didn't, and what he/she might do next time to make it better.
 
-* Database initialization
+I would also like to potentially add the ability for comedians to create set lists using the titles of their jokes as the list items so they could briefly review a set they performed, as well as rate the entire set, and take notes on how they could improve if for the next time.  Potentially, a comedian could use this set list on stage in order remember new material, instead of bringing a book on stage, or writing on their hand, as many comedians do.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Wish me luck!
 
 
 Please feel free to use a different markup language if you do not plan to run
