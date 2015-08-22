@@ -2,6 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.header-caption {
+	z-index: 1;
+	margin-top: -687px;
+	margin-left: 100px;
+}
+
+.cap-1 {
+	margin-top: 100px;
+	color: #000000;
+	font-size: 2.5em;
+	display: inline-block;
+}
+
+.cap-2 {
+	color: #FFE708;
+	font-size:2.5em;
+	display: inline-block;
+	margin-left: 10px;
+}
+
 h1 {
-	color: red;
+	font-size: 100px;
+	color: #FFE708;
 }
