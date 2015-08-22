@@ -26,3 +26,20 @@ h1 {
 	font-size: 100px;
 	color: #FFE708;
 }
+
+.jokes {
+	border: 1px black solid;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.jokes h3 {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.jokes small {
+	text-align: right;
+}
