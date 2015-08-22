@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/jokes' => 'jokes#index'
   get '/jokes/:id' => 'jokes#show', as: 'joke'
+  get '/tags' => 'tags#index'
+  get '/tags/:id' => 'tags#show', as: 'tag'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

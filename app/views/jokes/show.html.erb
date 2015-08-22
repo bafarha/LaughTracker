@@ -3,7 +3,7 @@
 		<h1><%= @joke.title %></h1>
 		<small><em><%= "#{time_ago_in_words(@joke.created_at)} ago" %></em></small>
 		<div class="tags">
-		<small><em><strong>Tags</strong></em></small>
+		<small><em><strong><%= link_to "Tags", "/tags" %></strong></em></small>
 		<% @tags.each do |t| %>
 			<small><em>#<%= t.title %></em></small>
 		<% end %>
@@ -11,5 +11,6 @@
 		<div class="jokes">
 			<p><%= @joke.content %></p>
 		</div>
+		<%= link_to "Jokes", "/jokes" %>
 	</div>
 </div>

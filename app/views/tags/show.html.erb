@@ -1,0 +1,16 @@
+<div class="main tag-show">
+	<div class="container">
+		<div class="tag">
+			<h1><%= @tag.title %></h1>
+		</div>
+		<div class="tag-jokes">
+			<h2>Jokes</h2>
+			<% @jokes.each do |j| %>
+			<div class="joke-title"
+			<p><%= j.title %></p>
+			<%= link_to "See Joke", joke_path(j) %>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
