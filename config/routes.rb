@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/jokes/:id' => 'jokes#show', as: 'joke'
   get '/tags' => 'tags#index'
   get '/tags/:id' => 'tags#show', as: 'tag'
+  get '/jokes/new' => 'jokes#new', as: 'new_joke'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+      resources :jokes
 
   # Example resource route with options:
   #   resources :products do
