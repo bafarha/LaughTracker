@@ -12,13 +12,14 @@ class JokesController < ApplicationController
 		@joke = Joke.find(params[:id])
 	end
 
-	#def create
-	#	@new_joke = Joke.new(joke_params)
-	#	if @new_joke.save
-	#		redirect_to joke_path
-	#	else
-	#		render 'new'
-	#end
+	def create
+		@new_joke = Joke.new(joke_params)
+		if @new_joke.save
+			redirect_to "/jokes"	
+		else
+			render 'new'
+		end
+	end
 
 	def show
 		@joke = Joke.find(params[:id])
@@ -27,10 +28,10 @@ class JokesController < ApplicationController
 
 	def update
     respond_to do |format|
-      if @joke.update(joke_params)
+     	if @joke.update(joke_params)
         format.html { redirect_to @joke, notice: 'Great new joke you got there!' }
         format.json { render :show, status: :ok, location: @product }
-      else
+ 		  else
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
@@ -41,5 +42,4 @@ class JokesController < ApplicationController
 		def joke_params
 			params.require(:joke).permit(:title, :content)
 		end
-
 end

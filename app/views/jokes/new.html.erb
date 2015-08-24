@@ -1,14 +1,20 @@
 <div class='main'>
 	<div class='container'>
+		<h1>New Joke</h1>
 		<%= form_for (@joke) do |f| %>
 			<div class="field">
-				<%= f.label :new_joke %><br>
+				<%= f.label :Title %><br>
 				<%= f.text_area :title %>
+			</div>
+			<div class="field">
+				<%= f.label :Joke %><br>
 				<%= f.text_area :content %>
 			</div>
 			<div class="actions">
 				<%= f.submit "create" %>
 			</div>
 		<% end %>
+		<%= link_to "Jokes", jokes_path %>
 	</div>
 </div>
+

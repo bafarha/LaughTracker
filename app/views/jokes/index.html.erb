@@ -1,6 +1,9 @@
 <div class="main">
 	<div class="container">
 		<h1>My Jokes</h1>
+		<div class="new_joke">
+			<%= link_to "New Joke", new_joke_path %>
+		</div>
 		<% @jokes.each do |j| %>
 			<div class="jokes col-lg-6">
 				<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>
@@ -9,7 +12,6 @@
 				<!--<%= link_to "See Joke", joke_path(j) %>-->
 			</div>
 		<% end %>
-		<%= link_to "New Joke", new_joke_path(@joke) %>
 	</div>
 </div>
 
