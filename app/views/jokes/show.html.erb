@@ -1,5 +1,6 @@
 <div class="main">
 	<div class="container">
+		<p id="notice"><%= notice %></p>
 		<h1><%= @joke.title %></h1>
 		<small><em><%= "#{time_ago_in_words(@joke.created_at)} ago" %></em></small>
 		<div class="edit">

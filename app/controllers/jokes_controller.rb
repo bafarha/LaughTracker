@@ -15,7 +15,7 @@ class JokesController < ApplicationController
 	def create
 		@new_joke = Joke.new(joke_params)
 		if @new_joke.save
-			redirect_to joke_path(@new_joke)
+			redirect_to joke_path(@new_joke), notice: 'Great new joke you got there!'
 		else
 			render 'new'
 		end
@@ -30,7 +30,7 @@ class JokesController < ApplicationController
     respond_to do |format|
      	if @joke.update(joke_params)
         format.html { redirect_to @joke, notice: 'Great new joke you got there!' }
-        format.json { render :show, status: :ok, location: @product }
+        format.json { render :show, status: :ok, location: @joke }
  		  else
         format.html { render :edit }
         format.json { render json: @product.errors, status: :unprocessable_entity }
