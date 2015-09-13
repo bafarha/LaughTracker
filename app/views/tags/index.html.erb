@@ -1,10 +1,13 @@
 <div class="main tag-index">
 	<div class="container">
+		<h1>My Tags</h1>
+		<div class="new_tag">
+			<%= link_to "New Tag", new_tag_path %>
+		</div>
 		<div class="row">
 			<% @tags.each do |t| %>
-			<div class="tag col-lg-2">
-				<h3><%= t.title %></h3>
-				<%= link_to "See Tag", tag_path(t) %>
+			<div class="tags col-lg-2">
+				<h3><a href='<%= tag_path(t) %>'><%= t.title %></a></h3>
 			</div>
 			<% end %>
 		</div>

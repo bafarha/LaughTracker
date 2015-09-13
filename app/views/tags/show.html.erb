@@ -3,6 +3,7 @@
 		<div class="tag">
 			<h1><%= @tag.title %></h1>
 		</div>
+		<%= link_to "Tags", "/tags" %>
 		<div class="tag-jokes">
 			<h2>Jokes</h2>
 			<% @jokes.each do |j| %>

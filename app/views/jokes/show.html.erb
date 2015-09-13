@@ -6,7 +6,7 @@
 		<div class="edit">
 			<small><em><strong><%= link_to "Edit", edit_joke_path(@joke) %></strong></em></small>
 		</div>
-		<div class="tags">
+		<div class="tag">
 			<small><em><strong><%= link_to "Tags", "/tags" %></strong></em></small>
 			<% @tags.each do |t| %>
 			<small><em><a href="<%= tag_path(t) %>">#<%= t.title %></a></em></small>

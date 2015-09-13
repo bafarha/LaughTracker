@@ -10,6 +10,7 @@ class JokesController < ApplicationController
 
 	def edit
 		@joke = Joke.find(params[:id])
+		@tags = @joke.tags
 	end
 
 	def create
