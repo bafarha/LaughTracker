@@ -7,7 +7,7 @@
 		<% @jokes.each do |j| %>
 			<div class="jokes col-lg-6">
 				<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>
-				<small><em><%= "#{time_ago_in_words(j.created_at)} ago" %></em></small>
+				<small><em><%= "#{(j.created_at.strftime("%b %-d, %Y"))}" %></em></small>
 				<!--<p><%= j.content %></p>-->
 				<!--<%= link_to "See Joke", joke_path(j) %>-->
 			</div>
