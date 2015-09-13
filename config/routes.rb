@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/jokes' => 'jokes#index'
   get '/jokes/new' => 'jokes#new', as: 'new_joke'
   get '/jokes/:id' => 'jokes#show', as: 'joke'
+  patch '/jokes/:id' => 'jokes#update'
   get '/tags' => 'tags#index'
   get '/tags/:id' => 'tags#show', as: 'tag'
 

@@ -27,6 +27,7 @@ class JokesController < ApplicationController
 	end
 
 	def update
+		@joke = Joke.find(params[:id])
     respond_to do |format|
      	if @joke.update(joke_params)
         format.html { redirect_to @joke, notice: 'Great new joke you got there!' }
@@ -40,6 +41,6 @@ class JokesController < ApplicationController
 	
 	private
 		def joke_params
-			params.require(:joke).permit(:title, :content)
+			params.require(:joke).permit(:id, :title, :content)
 		end
 end
