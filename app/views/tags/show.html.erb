@@ -1,5 +1,28 @@
 <div class="main tag-show">
 	<div class="container">
+		<%= form_for(@tag) do |f| %>
+			<fieldset id="tag-meta">
+				<ol>
+					<li class="control-group">
+						<%= f.label :title, "Tag", class: "control-label" %>
+						<div class="controls"><%= f.text_field :title %></div>
+					</li>
+				</ol>
+			</fieldset>
+
+			<fieldset id="tag-jokes">
+				<ol>
+					<%= f.fields_for :subjects do |subject| %>
+						<%= render 'subject_fields', f: subject %>
+					<% end %>
+				</ol>
+				<%= link_to_add_association 'add joke', f, :subjects, 'data-association-insertion-node' => "#{tag-jokes ol}", 'data-association-insertion-method' => "append", :wrap_object => Proc.new {|subject| subject.build_joke; subject} %>
+			</fieldset>
+
+			<% f.submit %>
+		<% end %>
+	</div>
+	<div class="container">
 		<div class="tag">
 			<h1><%= @tag.title %></h1>
 		</div>
