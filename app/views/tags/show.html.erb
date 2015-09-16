@@ -8,8 +8,15 @@
 			<h2>Jokes</h2>
 			<% @jokes.each do |j| %>
 			<div class="joke-title">
-			<p><a href='<%= joke_path(j) %>'><%= j.title %></a></p>
-			<!--<%= link_to "See Joke", joke_path(j) %>-->
+				<p><a href='<%= joke_path(j) %>'><%= j.title %></a></p>
+				<!--<%= link_to "See Joke", joke_path(j) %>-->
+			</div>
+			<% end %>
+			<%= form_for (@tag) do |f| %>
+			<%= f.label :Add_Jokes %>
+			<%= collection_select :tag, :joke_ids, Joke.all, :id, :title, prompt: true %>
+			<div class="actions">
+				<%= f.submit "Add" %>
 			</div>
 			<% end %>
 		</div>

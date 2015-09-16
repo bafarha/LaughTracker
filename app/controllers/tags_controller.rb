@@ -22,6 +22,19 @@ class TagsController < ApplicationController
 		@jokes = @tag.jokes
 	end
 
+	def update
+		@tag = Tag.find(params[:id])
+    respond_to do |format|
+     	if @tag.update(tag_params)
+        format.html { redirect_to @tag, notice: 'Great new joke you got there!' }
+        format.json { render :show, status: :ok, location: @tag }
+ 		else
+        format.html { render :edit }
+        format.json { render json: @product.errors, status: :unprocessable_entity }
+     	end
+     end
+    end
+
 	private
 		def tag_params
 			params.require(:tag).permit(:id, :title)
