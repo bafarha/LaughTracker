@@ -1,7 +1,12 @@
 <div class='main'>
 	<div class='container'>
 		<h1>New Joke</h1>
+
+
+
 		<%= form_for (@joke) do |f| %>
+		<%= f.label :Tag %>
+		<%= collection_select :joke, :tag_ids, Tag.all, :id, :title, prompt: true %>
 			<div class="field">
 				<%= f.label :Title %><br>
 				<%= f.text_area :title %>

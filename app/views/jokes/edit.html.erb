@@ -8,6 +8,8 @@
 </div>
 
 <%= form_for(@joke) do |f| %>
+<%= f.label :Tag %>
+<%= collection_select :joke, :tag_ids, Tag.all, :id, :title, prompt: true %>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>

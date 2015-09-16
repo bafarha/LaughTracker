@@ -6,6 +6,8 @@
 				<%= f.label :Title %><br>
 				<%= f.text_area :title %>
 			</div>
+			<%= f.label :Add_Jokes %>
+			<%= collection_select :tag, :joke_ids, Joke.all, :id, :title, prompt: true %>
 			<div class="actions">
 				<%= f.submit "create" %>
 			</div>
