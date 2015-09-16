@@ -26,7 +26,7 @@ class TagsController < ApplicationController
 		@tag = Tag.find(params[:id])
     respond_to do |format|
      	if @tag.update(tag_params)
-        format.html { redirect_to @tag, notice: 'Great new joke you got there!' }
+        format.html { redirect_to @tag, notice: 'Joke added!' }
         format.json { render :show, status: :ok, location: @tag }
  		else
         format.html { render :edit }
