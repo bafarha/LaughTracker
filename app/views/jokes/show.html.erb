@@ -6,6 +6,9 @@
 		<div class="edit">
 			<small><em><strong><%= link_to "Edit", edit_joke_path(@joke) %></strong></em></small>
 		</div>
+		<div>
+			Tags: <%= raw @joke.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+		</div>
 		<div class="jokes">
 			<p><%= @joke.content %></p>
 		</div>

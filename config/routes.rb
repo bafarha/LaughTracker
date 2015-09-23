@@ -11,9 +11,9 @@ Rails.application.routes.draw do
   get '/jokes/new' => 'jokes#new', as: 'new_joke'
   get '/jokes/:id' => 'jokes#show', as: 'joke'
   patch '/jokes/:id' => 'jokes#update'
-  get '/tags' => 'tags#index'
-  get '/tags/new' => 'tags#new', as: 'new_tag'
-  get '/tags/:id' => 'tags#show', as: 'tag'
+  get '/tags/:tag' => 'jokes#index', as: 'tag'
+  # get '/tags/new' => 'tags#new', as: 'new_tag'
+  # get '/tags/:id' => 'tags#show', as: 'tag'
   
 
 

@@ -1,5 +1,11 @@
 <div class="main">
 	<div class="container">
+		<h1>My Tags</h1>
+		<div id="tag_cloud">
+			<% tag_cloud Joke.tag_counts, %w[s m l] do |tag, css_class| %>
+				<%= link_to tag.name, tag_path(tag.name), class: css_class %>
+			<% end %>
+		</div>
 		<h1>My Jokes</h1>
 		<div class="new_joke">
 			<%= link_to "New Joke", new_joke_path %>
@@ -8,8 +14,9 @@
 			<div class="jokes col-lg-6">
 				<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>
 				<small><em><%= "#{(j.created_at.strftime("%b %-d, %Y"))}" %></em></small>
-				<!--<p><%= j.content %></p>-->
-				<!--<%= link_to "See Joke", joke_path(j) %>-->
+				<p>
+					Tags: <%= raw j.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+				</p>
 			</div>
 		<% end %>
 	</div>

@@ -1,7 +1,11 @@
 class JokesController < ApplicationController
 
 	def index
-		@jokes = Joke.all.order("created_at DESC")
+		if params[:tag]
+			@jokes = Joke.tagged_with(params[:tag]).order("created_at DESC")
+		else
+			@jokes = Joke.all.order("created_at DESC")
+		end
 	end
 
 	def new
