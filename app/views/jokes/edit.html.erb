@@ -1,16 +1,13 @@
 <h1>Edit Your Joke!</h1>
 
-<div class="tags">
-      <small><em><strong><%= link_to "Tags", "/tags" %></strong></em></small>
-      <% @tags.each do |t| %>
-      <small><em><a href="<%= tag_path(t) %>">#<%= t.title %></a></em></small>
-      <% end %>
-</div>
-
 <%= form_for(@joke) do |f| %>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :tag_list, "Tags (separated by commas)" %><br>
+    <%= f.text_field :tag_list %>
   </div>
   <div class="field">
     <%= f.label :content %><br>

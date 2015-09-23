@@ -10,7 +10,6 @@ class JokesController < ApplicationController
 
 	def edit
 		@joke = Joke.find(params[:id])
-		@tags = @joke.tags
 	end
 
 	def create
@@ -24,7 +23,6 @@ class JokesController < ApplicationController
 
 	def show
 		@joke = Joke.find(params[:id])
-		@tags = @joke.tags
 	end
 
 	def update
@@ -42,6 +40,6 @@ class JokesController < ApplicationController
 	
 	private
 		def joke_params
-			params.require(:joke).permit(:id, :title, :content)
+			params.require(:joke).permit(:id, :title, :content, :tag_list)
 		end
 end
