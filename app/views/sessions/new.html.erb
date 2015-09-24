@@ -1,0 +1,16 @@
+<div class="main">
+	<div class="container">
+		<h1>Log In!</h1>
+		<%= form_for(:session, url: login_path) do |f| %>
+			<div class="field">
+				<%= f.email_field :email, :placeholder => "Email" %>
+			</div>
+			<div class="field">
+				<%= f.password_field :password, :placeholder => "Password" %>
+			</div>
+			<div class="field">
+				<%= f.submit "Log In", class: "btn-submit" %>
+			</div>
+		<% end %>
+	</div>
+</div>
