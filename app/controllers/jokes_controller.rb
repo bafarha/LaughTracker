@@ -1,5 +1,5 @@
 class JokesController < ApplicationController
-
+before_action :require_user, only: [:index, :show, :new, :edit]
 	def index
 		if params[:tag]
 			@jokes = Joke.tagged_with(params[:tag]).order("created_at DESC")
