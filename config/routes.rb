@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/tags/:tag' => 'jokes#index', as: 'tag'
   # get '/tags/new' => 'tags#new', as: 'new_tag'
   # get '/tags/:id' => 'tags#show', as: 'tag'
+  get 'signup' => 'users#new'
   
 
 
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
   #   resources :products
       resources :jokes
       resources :tags
-
+      resources :users
   # Example resource route with options:
   #   resources :products do
   #     member do
