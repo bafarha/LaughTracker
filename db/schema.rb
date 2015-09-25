@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150924210419) do
+ActiveRecord::Schema.define(version: 20150925171739) do
 
   create_table "jokes", force: :cascade do |t|
     t.string   "title"
     t.string   "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "jokes", ["user_id"], name: "index_jokes_on_user_id"
 
   create_table "subjects", force: :cascade do |t|
     t.integer  "joke_id"

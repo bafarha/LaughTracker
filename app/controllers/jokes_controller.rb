@@ -2,9 +2,11 @@ class JokesController < ApplicationController
 before_action :require_user, only: [:index, :show, :new, :edit]
 	def index
 		if params[:tag]
-			@jokes = Joke.tagged_with(params[:tag]).order("created_at DESC")
+			@user = User.find(current_user)
+			@jokes = @user.jokes.tagged_with(params[:tag]).order("created_at DESC")
 		else
-			@jokes = Joke.all.order("created_at DESC")
+			@user = User.find(current_user)
+			@jokes = @user.jokes.all.order("created_at DESC")
 		end
 	end
 
@@ -17,7 +19,7 @@ before_action :require_user, only: [:index, :show, :new, :edit]
 	end
 
 	def create
-		@new_joke = Joke.new(joke_params)
+		@new_joke = current_user.jokes.new(joke_params)
 		if @new_joke.save
 			redirect_to joke_path(@new_joke), notice: 'Great new joke you got there!'
 		else
@@ -44,6 +46,6 @@ before_action :require_user, only: [:index, :show, :new, :edit]
 	
 	private
 		def joke_params
-			params.require(:joke).permit(:id, :title, :content, :tag_list)
+			params.require(:joke).permit(:id, :title, :content, :tag_list, :user_id)
 		end
 end
