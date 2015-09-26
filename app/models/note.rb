@@ -5,5 +5,5 @@ class Note < ActiveRecord::Base
   validates :body, presence: true
   validates :user, presence: true
   validates :joke, presence: true
-  validates :rating, numerically: { only_integer: true }
+  #validates :rating, numerically: { only_integer: true }
 end

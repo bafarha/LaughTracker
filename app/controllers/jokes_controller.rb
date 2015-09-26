@@ -29,6 +29,7 @@ before_action :require_user, only: [:index, :show, :new, :edit]
 
 	def show
 		@joke = Joke.find(params[:id])
+		@notes = @joke.notes.order("created_at DESC")
 	end
 
 	def update
