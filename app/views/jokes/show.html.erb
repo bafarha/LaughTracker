@@ -2,8 +2,8 @@
 	<div class="container">
 		<p id="notice"><%= notice %></p>
 		<h1><%= @joke.title %></h1>
-		<small><em><%= "#{(@joke.created_at.strftime("%b %-d, %Y"))}" %></em></small>
 		<p><div class="rated" data-score="<%= @joke.average_rating %>"></div> </p>
+		<small><em><%= "#{(@joke.created_at.strftime("%b %-d, %Y"))}" %></em></small>
 		<div class="edit">
 			<small><em><strong><%= link_to "Edit", edit_joke_path(@joke) %></strong></em></small>
 		</div>

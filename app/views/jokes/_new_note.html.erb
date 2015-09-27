@@ -14,7 +14,7 @@
 			<div class="rating"></div>
 		</p>
 		<p>
-			<%= f.submit "Add Note" %>
+			<%= f.submit "Add Notes" %>
 		</p>
 	<% end %>
 <% end %>
@@ -23,7 +23,11 @@
 	<% @notes.each do |note| %>
 		<div class="row">
 			<hr>
-			<p><small><em><%= "#{(note.created_at.strftime("%b %-d, %Y"))}" %></em></small></p>
+			<p><small><em><%= "#{(note.created_at.strftime("%b %-d, %Y"))}" %></em></small>
+				<% if current_user %>
+					<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, joke_note_path(@joke, note), method: :delete, data: { confirm: 'Are you sure?' } %>
+				<% end %>
+			</p>	
 			<div class="rated" data-score="<%= note.rating %>"></div>
 			<p><%= note.body %></p>
 		</div>
