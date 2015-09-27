@@ -5,9 +5,13 @@
 			<%= f.label :Notes %><br>
 			<%= f.text_area :body %>
 		</p>
-		<p>
+		<!--<p>
 			<%= f.label :rating %><br>
 			<%= f.text_field :rating %>
+		</p>-->
+		<p>
+			<%= f.label :rating, "Laugh-O-Meter" %>
+			<div class="rating"></div>
 		</p>
 		<p>
 			<%= f.submit "Add Note" %>
@@ -20,7 +24,7 @@
 		<div class="row">
 			<hr>
 			<p><small><em><%= "#{(note.created_at.strftime("%b %-d, %Y"))}" %></em></small></p>
-			<p><%= "Rating: #{note.rating}/5" %></p>
+			<div class="rated" data-score="<%= note.rating %>"></div>
 			<p><%= note.body %></p>
 		</div>
 	<% end %>
