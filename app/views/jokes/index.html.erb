@@ -1,5 +1,6 @@
 <div class="main">
 	<div class="container">
+		<p id="notice"><%= notice %></p>
 		<h1>My Tags</h1>
 		<div id="tag_cloud">
 			<% tag_cloud current_user.jokes.tag_counts, %w[s m l] do |tag, css_class| %>

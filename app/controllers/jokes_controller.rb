@@ -49,7 +49,7 @@ before_action :require_user, only: [:index, :show, :new, :edit]
     	@joke = Joke.find(params[:id])
     	@joke.destroy
     	respond_to do |format|
-      		format.html { redirect_to jokes_url, notice: 'Product was successfully destroyed.' }
+      		format.html { redirect_to jokes_url, notice: 'That joke is outta here!' }
       		format.json { head :no_content }
    	 	end
   	end
