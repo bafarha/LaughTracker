@@ -34,16 +34,25 @@ before_action :require_user, only: [:index, :show, :new, :edit]
 
 	def update
 		@joke = Joke.find(params[:id])
-    respond_to do |format|
-     	if @joke.update(joke_params)
-        format.html { redirect_to @joke, notice: 'Great new joke you got there!' }
-        format.json { render :show, status: :ok, location: @joke }
- 		  else
-        format.html { render :edit }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    	respond_to do |format|
+     		if @joke.update(joke_params)
+        		format.html { redirect_to @joke, notice: 'Great new joke you got there!' }
+        		format.json { render :show, status: :ok, location: @joke }
+ 		  	else
+        		format.html { render :edit }
+        		format.json { render json: @product.errors, status: :unprocessable_entity }
+      		end
+      	end
     end
-  end
+
+    def destroy
+    	@joke = Joke.find(params[:id])
+    	@joke.destroy
+    	respond_to do |format|
+      		format.html { redirect_to jokes_url, notice: 'Product was successfully destroyed.' }
+      		format.json { head :no_content }
+   	 	end
+  	end
 	
 	private
 		def joke_params
