@@ -14,6 +14,7 @@
 			<div class="jokes col-lg-6">
 				<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>
 				<small><em><%= "#{(j.created_at.strftime("%b %-d, %Y"))}" %></em></small>
+				<p> <div class="rated" data-score="<%= j.average_rating %>"></div> </p>
 				<p>
 					Tags: <%= raw j.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 				</p>
