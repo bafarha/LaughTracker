@@ -29,7 +29,7 @@ before_action :require_user, only: [:index, :show, :new, :edit]
 
 	def show
 		@joke = Joke.find(params[:id])
-		@notes = @joke.notes.order("created_at DESC")
+		@notes = @joke.notes.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 	end
 
 	def update
