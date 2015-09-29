@@ -9,12 +9,11 @@
 			<small><em><strong><%= link_to 'Delete', @joke, method: :delete, data: { confirm: 'Whoa! Do you really want to get rid of this knee-slapper?' } %></strong></em></small>
 		</div>
 		<div>
-			Tags: <%= raw @joke.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+			<p>Tags: <%= raw @joke.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %><p>
 		</div>
 		<div class="jokes">
 			<p><%= @joke.content %></p>
 		</div>
-		<%= link_to "Jokes", "/jokes" %>
 
 		<%= render 'new_note' %>
 	</div>

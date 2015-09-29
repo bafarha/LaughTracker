@@ -1,8 +1,7 @@
 <% if current_user %>
-	<h4>Add some notes:</h4>
 	<%= form_for ([@joke, @joke.notes.build]) do |f| %>
 		<p>
-			<%= f.label :Notes %><br>
+			<%= f.label :"Add Some Notes:" %><br>
 			<%= f.text_area :body %>
 		</p>
 		<!--<p>

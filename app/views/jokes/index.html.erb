@@ -7,10 +7,36 @@
 				<%= link_to tag.name, tag_path(tag.name), class: css_class %>
 			<% end %>
 		</div>
+		<!--<div class="jokes">
+			<% if params[:tag] %>
+				<h1>My Jokes tagged with <%= @tag_list %></h1>
+					<% @jokes.each do |j| %>
+					<div class="jokes col-lg-6">
+						<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>
+						<small><em><%= "#{(j.created_at.strftime("%b %-d, %Y"))}" %></em></small>
+						<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, j, method: :delete, data: { confirm: 'Whoa! Do you really want to get rid of this knee-slapper?' } %>
+						<p> <div class="rated" data-score="<%= j.average_rating %>"></div> </p>
+						<p>
+							Tags: <%= raw j.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+						</p>
+					</div>
+				<% end %>
+			<% else %>
+				<h1>My Jokes</h1>
+				<% @jokes.each do |j| %>
+					<div class="jokes col-lg-6">
+						<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>
+						<small><em><%= "#{(j.created_at.strftime("%b %-d, %Y"))}" %></em></small>
+						<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, j, method: :delete, data: { confirm: 'Whoa! Do you really want to get rid of this knee-slapper?' } %>
+						<p> <div class="rated" data-score="<%= j.average_rating %>"></div> </p>
+						<p>
+							Tags: <%= raw j.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+						</p>
+					</div>
+				<% end %>
+			<% end %>
+		</div>-->
 		<h1>My Jokes</h1>
-		<div class="new_joke">
-			<%= link_to "New Joke", new_joke_path %>
-		</div>
 		<% @jokes.each do |j| %>
 			<div class="jokes col-lg-6">
 				<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>
