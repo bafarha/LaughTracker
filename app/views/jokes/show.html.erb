@@ -1,6 +1,8 @@
 <div class="main">
 	<div class="container">
-		<p id="notice"><%= notice %></p>
+		<% if notice %>
+			<p id="notice" class="alert alert-success" role="alert"><%= notice %></p>
+		<% end %>
 		<h1><%= @joke.title %></h1>
 		<p><div class="rated" data-score="<%= @joke.average_rating %>"></div> </p>
 		<small><em><%= "#{(@joke.created_at.strftime("%b %-d, %Y"))}" %></em></small>

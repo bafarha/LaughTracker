@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'static_pages/index'
-
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -32,8 +32,7 @@ Rails.application.routes.draw do
       resources :jokes do
         resources :notes
       end
-      resources :tags
-      resources :users
+      resources :tags 
   # Example resource route with options:
   #   resources :products do
   #     member do

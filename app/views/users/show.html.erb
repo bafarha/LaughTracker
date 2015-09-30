@@ -1,0 +1,14 @@
+<div class="main">
+	<div class="container">
+		<% if notice %>
+			<p id="notice" class="alert alert-success" role="alert"><%= notice %></p>
+		<% end %>
+		<h1> You're Using Laugh Tracker, <%= @user.first_name %>!</h1>
+		<p><%= @user.first_name %><br></p>
+		<p><%= @user.last_name %><br></p>
+		<p><%= @user.email %><br></p>
+		<%= link_to "Change my Details", edit_user_path %>
+	</div>
+</div>
+
+

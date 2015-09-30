@@ -17,18 +17,18 @@
 <div class="navbar">
 	<div id="user_name">
 		<% if current_user %>
-    		<a><%= current_user.first_name %></a>
-    	<% else %>
-    	<% end %>
+        <a href='<%= user_path(@user) %>'><%= current_user.first_name %></a>
+      <% else %>
+      <% end %>
 	</div>
     <ul class="nav navbar-nav">
     <% if current_user %>
-    	<%= link_to 'Jokes', '/jokes' %>
+    	<%= link_to 'Jokes', jokes_path %>
     	<%= link_to 'Create', new_joke_path %>
-        <%= link_to "Logout", logout_path, method: "delete" %>
+      <%= link_to "Logout", logout_path, method: "delete" %>
     <% else %>
         <%= link_to "Login", 'login' %></a>
-		<%= link_to "Sign Up", 'signup' %></a>
+		    <%= link_to "Sign Up", 'signup' %></a>
     <% end %>
     </ul>
 </div>

@@ -12,10 +12,12 @@ before_action :require_user, only: [:index, :show, :new, :edit]
 	end
 
 	def new
+		@user = User.find(current_user)
 		@joke = Joke.new
 	end
 
 	def edit
+		@user = User.find(current_user)
 		@joke = Joke.find(params[:id])
 	end
 
@@ -29,6 +31,7 @@ before_action :require_user, only: [:index, :show, :new, :edit]
 	end
 
 	def show
+		@user= User.find(current_user)
 		@joke = Joke.find(params[:id])
 		@notes = @joke.notes.order("created_at DESC").paginate(:page => params[:page], :per_page => 5)
 	end
