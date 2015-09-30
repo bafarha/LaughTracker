@@ -4,6 +4,7 @@ before_action :require_user, only: [:index, :show, :new, :edit]
 		if params[:tag]
 			@user = User.find(current_user)
 			@jokes = @user.jokes.tagged_with(params[:tag]).order("created_at DESC")
+			@tag = @jokes.name
 		else
 			@user = User.find(current_user)
 			@jokes = @user.jokes.all.order("created_at DESC")
@@ -56,6 +57,6 @@ before_action :require_user, only: [:index, :show, :new, :edit]
 	
 	private
 		def joke_params
-			params.require(:joke).permit(:id, :title, :content, :tag_list, :user_id)
+			params.require(:joke).permit(:id, :title, :content, :tag_list, :user_id, :tag)
 		end
 end

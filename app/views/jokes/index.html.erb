@@ -7,9 +7,9 @@
 				<%= link_to tag.name, tag_path(tag.name), class: css_class %>
 			<% end %>
 		</div>
-		<!--<div class="jokes">
+		<div>
 			<% if params[:tag] %>
-				<h1>My Jokes tagged with <%= @tag_list %></h1>
+				<h3>Jokes tagged with <em><%= params[:tag] %></em> :</h3>
 					<% @jokes.each do |j| %>
 					<div class="jokes col-lg-6">
 						<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>
@@ -35,8 +35,8 @@
 					</div>
 				<% end %>
 			<% end %>
-		</div>-->
-		<h1>My Jokes</h1>
+		</div>
+		<!--<h1>My Jokes</h1>
 		<% @jokes.each do |j| %>
 			<div class="jokes col-lg-6">
 				<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>
@@ -47,7 +47,7 @@
 					Tags: <%= raw j.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 				</p>
 			</div>
-		<% end %>
+		<% end %>-->
 	</div>
 </div>
 
