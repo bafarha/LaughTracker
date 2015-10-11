@@ -6,18 +6,19 @@
 		<h1><%= @joke.title %></h1>
 		<p><div class="rated" data-score="<%= @joke.average_rating %>"></div> </p>
 		<small><em><%= "#{(@joke.created_at.strftime("%b %-d, %Y"))}" %></em></small>
-		<div class="edit">
-			<small><em><strong><%= link_to "Edit", edit_joke_path(@joke) %></strong></em></small>
-			<small><em><strong><%= link_to 'Delete', @joke, method: :delete, data: { confirm: 'Whoa! Do you really want to get rid of this knee-slapper?' } %></strong></em></small>
-		</div>
 		<div>
 			<p>Tags: <%= raw @joke.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %><p>
 		</div>
 		<div class="jokes">
 			<p><%= @joke.content %></p>
 		</div>
-
-		<%= render 'new_note' %>
+		<div class="edit">
+			<small><em><strong><%= link_to "Edit", edit_joke_path(@joke), class: "btn btn-send"%></strong></em></small>
+			<small><em><strong><%= link_to 'Delete', @joke, method: :delete, data: { confirm: 'Whoa! Do you really want to get rid of this knee-slapper?' }, class: "btn btn-cta" %></strong></em></small>
+		</div>
+		<div class='add_note'>
+			<%= render 'new_note' %>
+		</div>
 	</div>
 </div>
 

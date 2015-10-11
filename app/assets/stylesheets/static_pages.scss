@@ -4,27 +4,42 @@
 
 .header-caption {
 	z-index: 1;
-	margin-top: -687px;
-	margin-left: 100px;
+	margin-top: -480px;
+	margin-left: 120px;
+	margin-bottom: 0px;
+}
+
+.index-buttons {
+	margin-top: 130px;
+	margin-left: 10px;
+}
+
+.index-buttons.btn {
+	font-size: 18px;
 }
 
 .cap-1 {
-	margin-top: 100px;
-	color: #000000;
-	font-size: 2.5em;
+	margin-top: 0px;
+	color: #FFFFFF;
+	font-size: 4em;
 	display: inline-block;
 }
 
 .cap-2 {
-	color: #FFE708;
-	font-size:2.5em;
+	color: #FFFFFF;
+	font-size: 4em;
 	display: inline-block;
 	margin-left: 10px;
 }
 
-h1 {
-	font-size: 100px;
+h1.cap-2 {
+	font-size: 110px;
 	color: #FFE708;
+}
+
+h1.cap-1 {
+	font-size: 110px;
+	color: #232323;
 }
 
 .jokes {

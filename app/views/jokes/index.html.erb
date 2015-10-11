@@ -24,7 +24,10 @@
 					</div>
 				<% end %>
 			<% else %>
-				<h1>My Jokes</h1>
+				<div class="row col-lg-12">
+				<h1 class="row col-lg-6 col-md-6 col-sm-6">My Jokes</h1>
+				<%= link_to "New Joke", new_joke_path, class: "row col-lg-6 new_joke btn btn-send" %>
+				</div>
 				<% @jokes.each do |j| %>
 					<div class="jokes col-lg-6">
 						<h3><a href='<%= joke_path(j) %>'><%= j.title %></a></h3>

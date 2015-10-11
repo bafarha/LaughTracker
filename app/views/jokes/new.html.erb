@@ -15,7 +15,8 @@
     			<%= f.text_field :tag_list %>
   			</div>
 			<div class="actions">
-				<p><%= f.submit "Create" %></p>
+				<p><%= f.submit "Create", class: 'btn btn-send' %></p>
+				<p><%= link_to "CANCEL", jokes_path, class: "btn btn-cta" %></p>
 			</div>
 		<% end %>
 	</div>

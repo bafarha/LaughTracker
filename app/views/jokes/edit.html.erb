@@ -16,8 +16,8 @@
         <%= f.text_area :content %>
       </div>
       <div class="actions">
-        <p><%= f.submit "Update Joke"%></p>
-        <p><%= link_to "Cancel", jokes_path %></p>
+        <p><%= f.submit "Update Joke", class: "btn btn-send"%></p>
+        <p><%= link_to "Cancel", jokes_path, class: "btn btn-cta" %></p>
       </div>
     <% end %>
   </div>
