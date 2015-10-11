@@ -11,7 +11,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Abel|Lato' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Puritan:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="navbar">
@@ -19,12 +19,14 @@
 		<% if current_user %>
         <a href='<%= user_path(@user) %>'><%= current_user.first_name %></a>
       <% else %>
+        <a>LaughTracker</a>
       <% end %>
 	</div>
     <ul class="nav navbar-nav">
     <% if current_user %>
     	<%= link_to 'Jokes', jokes_path %>
     	<%= link_to 'Create', new_joke_path %>
+      <%= link_to 'Home', root_path %>
       <%= link_to "Logout", logout_path, method: "delete" %>
     <% else %>
         <%= link_to "Login", 'login' %></a>

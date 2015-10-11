@@ -108,12 +108,17 @@ border-radius: 0px;
 }
 
 #user_name {
+	font-family: 'Puritan', sans-serif;
 	padding: 12px;
 	margin-top: 10px;
 	color: #000;
 	font-size: 1.5em;
 	margin-left: 10px;
 	display: inline;
+}
+
+#user_name a {
+	font-family: 'Puritan', sans-serif;
 }
 
 #user_name a:hover {
@@ -130,15 +135,15 @@ border-radius: 0px;
 /* Typography */
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Puritan', sans-serif;
 }
 
 p {
-	font-family: 'Abel', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 a {
-	font-family: 'Abel', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 label {
