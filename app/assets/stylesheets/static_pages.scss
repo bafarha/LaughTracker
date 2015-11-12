@@ -95,3 +95,24 @@ h1.cap-1 {
 	display: inline-block;
 	margin-right: 20px;
 }
+
+.feature {
+	margin: 0 auto;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	background-color: #7E2662;	
+}
+
+.feature h1 {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 4em;
+	color: #FFE708;
+}
+
+.feature p {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 2.5em;
+	color: #FFE708;
+}
